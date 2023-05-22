@@ -1,0 +1,14 @@
+<h1 class="d-flex justify-content-center mt-5">New game<h1>
+
+<h2 class="d-flex justify-content-center mt-5"><%= @letters %></h2>
+
+<form class="d-flex justify-content-center mt-5" action="/score" method="post" data-turbo="false">
+    <div class="col-auto">
+        <input type="text" class="form-control" name="word" placeholder="Your longest word">
+    </div>
+    <div class="col-auto">
+        <input type="submit" class="btn btn-primary" value="Play!">
+    </div>
+    <%= hidden_field_tag 'letters', @letters %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
